@@ -13,7 +13,6 @@ let docRef = db.collection('Z2M-103');
 
 
 exports.helloooPubSub = functions.pubsub.topic('gateway_telemetry').onPublish((message) => {
-//exports.helloPubSub = (pubSubEvent, context)=> {  
   let  Code , Voiture , equi, date, Details = null, state, MyCode;
 
   
@@ -33,7 +32,7 @@ exports.helloooPubSub = functions.pubsub.topic('gateway_telemetry').onPublish((m
         if (code === Code){
               Details = details;
 		} else {
-			
+		    Details = "Unrecognized Code";	
 		}
 	}
    
